@@ -27,6 +27,7 @@ public:
     Tv();
     std::vector<sf::Sprite> tvs;
     void upDateTv(sf::RenderWindow& window);
+    void reStart();
 
 };
 class Asteriod{
@@ -37,6 +38,7 @@ public:
     Asteriod();
     std::vector<sf::Sprite> ats;
     void upDateAst(sf::RenderWindow& window);
+    void reStart();
 
 };
 class Sat{
@@ -47,6 +49,7 @@ public:
     Sat();
     std::vector<sf::Sprite> sats;
     void upDateSat(sf::RenderWindow& window);
+    void reStart();
 
 };
 class Soda{
@@ -57,6 +60,7 @@ public:
     Soda();
     std::vector<sf::Sprite> sodas;
     void upDateSoda(sf::RenderWindow& window);
+    void reStart ();
 
 };
 

@@ -20,6 +20,7 @@
 #include "opps.hpp"
 #include "rick.hpp"
 #include "MainMenu.hpp"
+#include "endScreen.hpp"
 
 class Game{
 public:
@@ -33,12 +34,16 @@ public:
     //Menu
     int menuSelected = 0;
     Game();
-    void play(sf::RenderWindow& window, Menu& menu);
+    void play(sf::Event& event, sf::RenderWindow& window, Menu& menu);
     void upDate(sf::RenderWindow& window);
     void collision();
     void draw(sf::RenderWindow& window);
+    void reStart();
     //Add menu
     void menuScreen(Menu& menu, sf::Event& event, sf::RenderWindow& window);
+    void endScreen(sf::Event& event, sf::RenderWindow& window);
+    void endEnter(EndScreen& endScreen, sf::Event& event, sf::RenderWindow& window);
+    
 };
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9460AC91294692F100AA72DD /* endScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9460AC8F294692F100AA72DD /* endScreen.cpp */; };
 		E8F9F6F9293DD47B00903950 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8F9F6F8293DD47B00903950 /* ResourcePath.mm */; };
 		E8F9F6FC293DD47B00903950 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8F9F6FB293DD47B00903950 /* main.cpp */; };
 		E8F9F6FF293DD47B00903950 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8F9F6FE293DD47B00903950 /* cute_image.jpg */; };
@@ -29,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9460AC8F294692F100AA72DD /* endScreen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = endScreen.cpp; sourceTree = "<group>"; };
+		9460AC90294692F100AA72DD /* endScreen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = endScreen.hpp; sourceTree = "<group>"; };
+		E84C0719293DFD8000821746 /* ss.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = ss.ogg; sourceTree = "<group>"; };
+		E84C071A293DFEEB00821746 /* sound.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.ogg; sourceTree = "<group>"; };
 		E8F9F6F3293DD47B00903950 /* RickAndMortySpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortySpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F9F6F7293DD47B00903950 /* RickAndMortySpace-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RickAndMortySpace-Info.plist"; path = "../RickAndMortySpace-Info.plist"; sourceTree = "<group>"; };
 		E8F9F6F8293DD47B00903950 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -89,6 +94,8 @@
 			children = (
 				E8F9F6F8293DD47B00903950 /* ResourcePath.mm */,
 				E8F9F6FA293DD47B00903950 /* ResourcePath.hpp */,
+				9460AC8F294692F100AA72DD /* endScreen.cpp */,
+				9460AC90294692F100AA72DD /* endScreen.hpp */,
 				E8F9F70B293DD4D500903950 /* MainMenu.cpp */,
 				E8F9F70C293DD4D500903950 /* MainMenu.hpp */,
 				E8F9F70E293DD53700903950 /* opps.cpp */,
@@ -97,7 +104,9 @@
 				E8F9F712293DD56D00903950 /* rick.hpp */,
 				E8F9F714293DD5AD00903950 /* game.cpp */,
 				E8F9F715293DD5AD00903950 /* game.hpp */,
+				E84C071A293DFEEB00821746 /* sound.ogg */,
 				E8F9F6FB293DD47B00903950 /* main.cpp */,
+				E84C0719293DFD8000821746 /* ss.ogg */,
 				E8F9F6FD293DD47B00903950 /* Resources */,
 				E8F9F6F6293DD47B00903950 /* Supporting Files */,
 			);
@@ -234,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9460AC91294692F100AA72DD /* endScreen.cpp in Sources */,
 				E8F9F6FC293DD47B00903950 /* main.cpp in Sources */,
 				E8F9F70D293DD4D500903950 /* MainMenu.cpp in Sources */,
 				E8F9F6F9293DD47B00903950 /* ResourcePath.mm in Sources */,

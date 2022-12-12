@@ -53,22 +53,3 @@ void Menu::draw(sf::RenderWindow &window)
     }
 }
 
-void Menu::MoveUp()
-{
-    if (selectedItemsIndex - 1 >= 0)
-    {
-        menu[selectedItemsIndex].setFillColor(sf::Color::White);
-        selectedItemsIndex--;
-        menu[selectedItemsIndex].setFillColor(sf::Color::Red);
-    }
-}
-
-void Menu::MoveDown()
-{
-    if (selectedItemsIndex + 1 < MAX_NUMBER_OF_ITEMS)
-    {
-        menu[selectedItemsIndex].setFillColor(sf::Color::White);
-        selectedItemsIndex++;
-        menu[selectedItemsIndex].setFillColor(sf::Color::Red);
-    }
-}

@@ -1,38 +1,37 @@
 //
-//  MainMenu.hpp
+//  endScreen.hpp
 //  RickAndMortySpace
 //
-//  Created by Julian Grado on 12/4/22.
+//  Created by Natalie Diaz on 12/11/22.
 //  Copyright © 2022 Julian Grado. All rights reserved.
 //
 
-#ifndef MainMenu_hpp
-#define MainMenu_hpp
+#ifndef endScreen_hpp
+#define endScreen_hpp
 
 #include <stdio.h>
-#pragma once
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include"SFML/Window.hpp"
 #include"SFML/System.hpp"
+#include "ResourcePath.hpp"
 #include<cstdlib>
+
 
 #define MAX_NUMBER_OF_ITEMS 1
 
-class Menu
+class EndScreen
 {
     int selectedItemsIndex;
     sf::Texture texture;
     sf::Sprite background;
     sf::Font font;
-    sf::Text menu[MAX_NUMBER_OF_ITEMS];
+    sf::Text end[MAX_NUMBER_OF_ITEMS];
     
 public:
-    Menu(float width, float height);
-    ~Menu();
-    
+    EndScreen(float width, float height);
     void draw(sf::RenderWindow &window);
     int GetPressItem() {return selectedItemsIndex;}
 };
 
-#endif
+#endif /* endScreen_hpp */

@@ -37,6 +37,7 @@ public:
     int getHp() { return hp; }
     void minusHp();
     void plusHp();
+    void restartHp() { hp = 10;}
     sf::Sprite getRick();
     sf::RectangleShape getHpBar();
    

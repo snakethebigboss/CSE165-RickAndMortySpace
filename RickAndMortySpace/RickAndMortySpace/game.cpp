@@ -26,7 +26,7 @@ Game::Game ()
     
 }
 
-void Game::play(sf::RenderWindow& window, Menu& menu)
+void Game::play(sf::Event& event, sf::RenderWindow& window, Menu& menu)
 {
     if (menuSelected == 0)
     {
@@ -39,6 +39,11 @@ void Game::play(sf::RenderWindow& window, Menu& menu)
         draw(window);
         collision();
         upDate(window);
+    }
+    if (rick.getHp() <= 0 || menuSelected == 2 )
+    {
+        reStart();
+        endScreen(event, window);
     }
 }
 
@@ -113,7 +118,9 @@ void Game::collision()
     {
         if(rick.getRick().getGlobalBounds().intersects(soda.sodas[i].getGlobalBounds()))
         {
-            rick.plusHp();
+            if (rick.getHp() < 10) {
+                rick.plusHp();
+            }
             soda.sodas.erase(soda.sodas.begin() + i);
         }
     }
@@ -177,15 +184,6 @@ void Game::menuScreen(Menu& menu, sf::Event& event, sf::RenderWindow& window)
 {
     if(event.type == sf::Event::KeyReleased)
     {
-        if(event.key.code == sf::Keyboard::Up)
-        {
-            menu.MoveUp();
-        }
-        if(event.key.code == sf::Keyboard::Down)
-        {
-            menu.MoveDown();
-            
-        }
         if(event.key.code == sf::Keyboard::Return)
         {
             if (menu.GetPressItem() == 0)
@@ -199,3 +197,39 @@ void Game::menuScreen(Menu& menu, sf::Event& event, sf::RenderWindow& window)
     }
 }
 
+void Game::endScreen(sf::Event& event, sf::RenderWindow& window)
+{
+    EndScreen endScreen(window.getSize().x, window.getSize().y);
+    menuSelected = 2;
+    window.clear();
+    endScreen.draw(window);
+    window.display();
+    endEnter(endScreen, event, window);
+}
+
+void Game::endEnter(EndScreen& endScreen, sf::Event& event, sf::RenderWindow& window)
+{
+    if(event.type == sf::Event::KeyReleased)
+    {
+        if(event.key.code == sf::Keyboard::Return)
+        {
+            if (endScreen.GetPressItem() == 0)
+            {
+                std::cout <<"Restart button has been pressed" << std::endl;
+                menuSelected = 1;
+                window.clear();
+                
+            }
+        }
+    }
+}
+
+void Game::reStart()
+{
+    rick.restartHp();
+    rick.cooldown = 10;
+    sat.reStart();
+    tv.reStart();
+    as.reStart();
+    soda.reStart();
+}

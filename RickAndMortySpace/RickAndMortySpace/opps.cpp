@@ -27,7 +27,7 @@ void Tv::upDateTv(sf::RenderWindow& window) {
 
     for (size_t i = 0; i < tvs.size(); i++)
     {
-        tvs[i].move(-7.f, 0.f);
+        tvs[i].move(-6.f, 0.f);
 
         if(tvs[i].getPosition().x < 0 - tv.getGlobalBounds().width)
         {
@@ -35,13 +35,13 @@ void Tv::upDateTv(sf::RenderWindow& window) {
         }
     }
 
-    if(tvSpawnTimer < 40)
+    if(tvSpawnTimer < 60)
     {
         tvSpawnTimer++;
 
     }
 
-    if(tvSpawnTimer >= 40)
+    if(tvSpawnTimer >= 60)
     {
         tv.setPosition(window.getSize().x, rand()%int(window.getSize().y - tv.getGlobalBounds().height));
         tvs.push_back(sf::Sprite(tv));
@@ -66,7 +66,7 @@ void Asteriod::upDateAst(sf::RenderWindow& window) {
 
     for (size_t i = 0; i < ats.size(); i++)
     {
-        ats[i].move(-7.f, 0.f);
+        ats[i].move(-6.f, 0.f);
 
         if(ats[i].getPosition().x < 0 - as.getGlobalBounds().width)
         {
@@ -74,13 +74,13 @@ void Asteriod::upDateAst(sf::RenderWindow& window) {
         }
     }
 
-    if(atSpawnTimer < 40)
+    if(atSpawnTimer < 60)
     {
         atSpawnTimer++;
 
     }
 
-    if(atSpawnTimer >= 40)
+    if(atSpawnTimer >= 60)
     {
         as.setPosition(window.getSize().x, rand()%int(window.getSize().y - as.getGlobalBounds().height));
         ats.push_back(sf::Sprite(as));
@@ -105,7 +105,7 @@ void Sat::upDateSat(sf::RenderWindow& window) {
 
     for (size_t i = 0; i < sats.size(); i++)
     {
-        sats[i].move(-7.f, 0.f);
+        sats[i].move(-5.f, 0.f);
 
         if(sats[i].getPosition().x < 0 - sat.getGlobalBounds().width)
         {
@@ -113,13 +113,13 @@ void Sat::upDateSat(sf::RenderWindow& window) {
         }
     }
 
-    if(SatSpawnTimer < 40)
+    if(SatSpawnTimer < 100)
     {
         SatSpawnTimer++;
 
     }
 
-    if(SatSpawnTimer >= 40)
+    if(SatSpawnTimer >= 100)
     {
         sat.setPosition(window.getSize().x, rand()%int(window.getSize().y - sat.getGlobalBounds().height));
         sats.push_back(sf::Sprite(sat));
@@ -143,7 +143,7 @@ void Soda::upDateSoda(sf::RenderWindow& window) {
 
     for (size_t i = 0; i < sodas.size(); i++)
     {
-        sodas[i].move(-7.f, 0.f);
+        sodas[i].move(-3.f, 0.f);
 
         if(sodas[i].getPosition().x < 0 - soda.getGlobalBounds().width)
         {
@@ -162,5 +162,41 @@ void Soda::upDateSoda(sf::RenderWindow& window) {
         soda.setPosition(window.getSize().x, rand()%int(window.getSize().y - soda.getGlobalBounds().height));
         sodas.push_back(sf::Sprite(soda));
         SodaSpawnTimer = 0;
+    }
+}
+
+void Tv::reStart()
+{
+    tvSpawnTimer = 15;
+    for(int i = 0; i < tvs.size(); i++)
+    {
+        tvs.erase(tvs.begin() + i);
+    }
+}
+
+void Asteriod::reStart()
+{
+    atSpawnTimer = 15;
+    for(int i = 0; i < ats.size(); i++)
+    {
+        ats.erase(ats.begin() + i);
+    }
+}
+
+void Sat::reStart()
+{
+    SatSpawnTimer = 15;
+    for(int i = 0; i < sats.size(); i++)
+    {
+        sats.erase(sats.begin() + i);
+    }
+}
+
+void Soda::reStart()
+{
+    SodaSpawnTimer = 15;
+    for(int i = 0; i < sodas.size(); i++)
+    {
+        sodas.erase(sodas.begin() + i);
     }
 }
