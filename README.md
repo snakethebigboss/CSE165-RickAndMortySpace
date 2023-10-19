@@ -1,4 +1,7 @@
 # CSE165-RickAndMortySpace
+
+Inspired by: https://www.youtube.com/watch?v=J-multroR3A 
+
 Our CSE 165 project. This is an object oriented side scroller game influenced by the hit TV show Rick and Morty
 
 Restart Screen now Included
